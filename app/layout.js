@@ -14,27 +14,6 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         {children}
-        <style jsx global>{`
-          * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-          }
-          
-          :root {
-            --primary: #FF4713;
-            --dark: #1a1a1a;
-            --light: #ffffff;
-            --gray: #f5f5f5;
-          }
-          
-          body {
-            font-family: 'Cairo', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            overflow-x: hidden;
-          }
-        `}</style>
       </body>
     </html>
   )
