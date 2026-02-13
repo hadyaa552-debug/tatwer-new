@@ -33,11 +33,11 @@ export default function Home() {
           backdrop-filter: blur(10px);
           box-shadow: 0 2px 10px rgba(0,0,0,0.1);
           z-index: 1000;
-          padding: 0.5rem 2rem;
+          padding: 0.5rem 4rem;
         }
         
         .header-content {
-          max-width: 1600px;
+          max-width: 100%;
           margin: 0 auto;
           display: flex;
           justify-content: space-between;
@@ -97,12 +97,13 @@ export default function Home() {
           grid-template-columns: 1.2fr 0.8fr;
           align-items: center;
           gap: 4rem;
-          padding: 7rem 3rem 3rem;
+          padding: 7rem 4rem 3rem;
           color: white;
         }
         
         .hero-content {
           text-align: right;
+          max-width: 100%;
         }
         
         .hero h1 {
@@ -215,8 +216,8 @@ export default function Home() {
         
         /* Sections */
         section {
-          padding: 5rem 2rem;
-          max-width: 1400px;
+          padding: 5rem 4rem;
+          max-width: 100%;
           margin: 0 auto;
         }
         
@@ -232,6 +233,8 @@ export default function Home() {
           grid-template-columns: 1fr 1fr;
           gap: 4rem;
           align-items: center;
+          max-width: 1400px;
+          margin: 0 auto;
         }
         
         .overview-image {
@@ -270,6 +273,9 @@ export default function Home() {
           grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
           gap: 2rem;
           margin-top: 3rem;
+          max-width: 1400px;
+          margin-left: auto;
+          margin-right: auto;
         }
         
         .unit-card {
@@ -317,6 +323,9 @@ export default function Home() {
           grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
           gap: 2rem;
           margin-top: 3rem;
+          max-width: 1400px;
+          margin-left: auto;
+          margin-right: auto;
         }
         
         .amenity-card {
@@ -340,10 +349,10 @@ export default function Home() {
         .payment-section {
           background: linear-gradient(135deg, var(--primary), #ff6b3d);
           color: white;
-          border-radius: 30px;
+          border-radius: 0;
           padding: 4rem;
           text-align: center;
-          margin: 3rem 0;
+          margin: 0;
         }
         
         .payment-grid {
@@ -351,6 +360,9 @@ export default function Home() {
           grid-template-columns: repeat(3, 1fr);
           gap: 3rem;
           margin-top: 3rem;
+          max-width: 1200px;
+          margin-left: auto;
+          margin-right: auto;
         }
         
         .payment-feature h3 {
@@ -361,7 +373,7 @@ export default function Home() {
         footer {
           background: var(--dark);
           color: white;
-          padding: 3rem 2rem 1rem;
+          padding: 3rem 4rem 1rem;
           margin-top: 4rem;
         }
         
@@ -406,9 +418,13 @@ export default function Home() {
         
         /* Responsive */
         @media (max-width: 968px) {
+          .header {
+            padding: 0.5rem 1.5rem;
+          }
+          
           .hero {
             grid-template-columns: 1fr;
-            padding: 5rem 1rem 2rem;
+            padding: 5rem 1.5rem 2rem;
           }
           
           .hero h1 {
@@ -421,6 +437,10 @@ export default function Home() {
           
           nav ul {
             display: none;
+          }
+          
+          section {
+            padding: 3rem 1.5rem;
           }
           
           .overview-grid,
