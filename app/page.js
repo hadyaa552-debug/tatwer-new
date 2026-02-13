@@ -93,17 +93,16 @@ export default function Home() {
           min-height: 100vh;
           background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
                       url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1920') center/cover;
-          display: grid;
-          grid-template-columns: 1.2fr 0.8fr;
+          display: flex;
           align-items: center;
-          gap: 4rem;
+          justify-content: center;
           padding: 7rem 4rem 3rem;
           color: white;
         }
         
         .hero-content {
-          text-align: right;
-          max-width: 100%;
+          text-align: center;
+          max-width: 900px;
         }
         
         .hero h1 {
@@ -128,6 +127,8 @@ export default function Home() {
           gap: 3rem;
           margin-top: 3rem;
           max-width: 700px;
+          margin-left: auto;
+          margin-right: auto;
         }
         
         .stat {
@@ -403,10 +404,15 @@ export default function Home() {
         }
         
         /* Amenities */
+        .amenities-section {
+          background: white;
+          padding: 5rem 4rem;
+        }
+        
         .amenities-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-          gap: 2rem;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 2.5rem;
           margin-top: 3rem;
           max-width: 1400px;
           margin-left: auto;
@@ -415,19 +421,110 @@ export default function Home() {
         
         .amenity-card {
           text-align: center;
-          padding: 2rem;
-          background: var(--gray);
-          border-radius: 15px;
-          transition: transform 0.3s;
+          padding: 2rem 1.5rem;
+          background: #fafafa;
+          border-radius: 12px;
+          transition: transform 0.3s, box-shadow 0.3s;
         }
         
         .amenity-card:hover {
-          transform: scale(1.05);
+          transform: translateY(-5px);
+          box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
         
         .amenity-icon {
-          font-size: 3rem;
-          margin-bottom: 1rem;
+          width: 50px;
+          height: 50px;
+          margin: 0 auto 1rem;
+          background: #fff5f2;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 1.5rem;
+        }
+        
+        .amenity-card h4 {
+          font-size: 1.1rem;
+          font-weight: 700;
+          margin-bottom: 0.5rem;
+          color: var(--dark);
+        }
+        
+        .amenity-card p {
+          font-size: 0.9rem;
+          color: #666;
+          line-height: 1.6;
+        }
+        
+        /* Gallery Section */
+        .gallery-section {
+          background: white;
+          padding: 5rem 4rem;
+        }
+        
+        .gallery-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 1.5rem;
+          margin-top: 3rem;
+          max-width: 1400px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        
+        .gallery-item {
+          position: relative;
+          aspect-ratio: 4/3;
+          border-radius: 15px;
+          overflow: hidden;
+          cursor: pointer;
+          transition: transform 0.3s;
+        }
+        
+        .gallery-item:hover {
+          transform: scale(1.05);
+        }
+        
+        .gallery-item img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+        
+        /* Gallery Section */
+        .gallery-section {
+          background: white;
+          padding: 5rem 4rem;
+        }
+        
+        .gallery-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 1.5rem;
+          margin-top: 3rem;
+          max-width: 1400px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        
+        .gallery-item {
+          position: relative;
+          aspect-ratio: 4/3;
+          border-radius: 15px;
+          overflow: hidden;
+          cursor: pointer;
+          transition: transform 0.3s;
+        }
+        
+        .gallery-item:hover {
+          transform: scale(1.05);
+        }
+        
+        .gallery-item img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
         }
         
         /* Payment */
@@ -587,36 +684,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-        
-        <div className="contact-form">
-          <h3>احجز استشارة</h3>
-          <form onSubmit={handleSubmit}>
-            <div className="form-group">
-              <label>الاسم الكامل *</label>
-              <input type="text" name="name" value={formData.name} onChange={handleChange} required placeholder="" />
-            </div>
-            <div className="form-group">
-              <label>رقم الهاتف * (20+ 456 123 7890)</label>
-              <input type="tel" name="phone" value={formData.phone} onChange={handleChange} required placeholder="" />
-            </div>
-            <div className="form-group">
-              <label>البريد الإلكتروني (example@email.com)</label>
-              <input type="email" name="email" value={formData.email} onChange={handleChange} placeholder="" />
-            </div>
-            <div className="form-group">
-              <label>نوع الوحدة *</label>
-              <select name="unitType" style={{ width: '100%', padding: '0.7rem', border: '1px solid #ddd', borderRadius: '5px', fontFamily: 'Cairo, sans-serif', fontSize: '0.9rem', background: '#f9f9f9' }}>
-                <option value="">اختر نوع الوحدة</option>
-                <option value="studio">ستوديو</option>
-                <option value="1br">غرفة نوم واحدة</option>
-                <option value="2br">غرفتين نوم</option>
-                <option value="3br">3 غرف نوم</option>
-                <option value="penthouse">بنتهاوس</option>
-              </select>
-            </div>
-            <button type="submit" className="submit-btn">إرسال الطلب</button>
-          </form>
-        </div>
       </section>
 
       {/* Overview */}
@@ -692,6 +759,52 @@ export default function Home() {
               <li>موقع استراتيجي على الساحل</li>
             </ul>
           </div>
+        </div>
+      </section>
+
+      {/* Amenities */}
+      <section className="amenities-section">
+        <h2 className="section-title">مميزات المشروع</h2>
+        <div className="amenities-grid">
+          {[
+            { icon: '🌊', title: 'إطلالة بحرية مباشرة', desc: 'جميع الوحدات بإطلالة بانورامية على البحر' },
+            { icon: '🏨', title: 'ممشى سياحي 1 كم', desc: 'ممشى على البحر مباشرة مع مطاعم وكافيهات عالمية' },
+            { icon: '❤️', title: 'إدارة Marriott', desc: 'فندق وخدمات تحت إدارة Marriott International' },
+            { icon: '🏊', title: 'حمامات سباحة فاخرة', desc: 'حمامات Infinity على البحر' },
+            { icon: '⛵', title: 'مركز معارض ومؤتمرات', desc: 'مور وروش الأرواق BC Realty وأرواق الريادة' },
+            { icon: '🏢', title: 'مساحات خضراء', desc: 'حدائق ومتنزهات طبيعية على الجبل والبحر' },
+            { icon: '🏗️', title: 'تشطيب كامل', desc: 'جميع الوحدات بتشطيب كامل وجاهزة للسكن' },
+            { icon: '🏪', title: 'مطاعم عالمية', desc: 'مطاعم وكافيهات ووحدات تجارية عالمية' },
+            { icon: '🛡️', title: 'أمن وحراسة 24/7', desc: 'نظام أمن متقدم على مدار الساعة' }
+          ].map((a, i) => (
+            <div key={i} className="amenity-card">
+              <div className="amenity-icon">{a.icon}</div>
+              <h4>{a.title}</h4>
+              <p>{a.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Gallery */}
+      <section className="gallery-section">
+        <h2 className="section-title">معرض الصور</h2>
+        <p style={{ textAlign: 'center', fontSize: '1.1rem', color: '#666', marginBottom: '2rem' }}>
+          اكتشف جمال IL Monte Galala من خلال معرض الصور
+        </p>
+        <div className="gallery-grid">
+          {[
+            'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800',
+            'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800',
+            'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800',
+            'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800',
+            'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800',
+            'https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=800'
+          ].map((img, i) => (
+            <div key={i} className="gallery-item">
+              <img src={img} alt={`IL Monte Galala - صورة ${i + 1}`} />
+            </div>
+          ))}
         </div>
       </section>
 
