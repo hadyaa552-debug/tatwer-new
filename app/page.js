@@ -14,7 +14,7 @@ export default function Home() {
     e.preventDefault()
     
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch('https://formspree.io/f/mpqjpoog', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
