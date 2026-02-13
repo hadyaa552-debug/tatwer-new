@@ -650,7 +650,7 @@ export default function Home() {
               <li><a href="#contact">تواصل معنا</a></li>
             </ul>
           </nav>
-          <div className="header-phone">0102 4383 203</div>
+          <div className="header-phone">01070752370</div>
         </div>
       </header>
 
@@ -696,7 +696,7 @@ export default function Home() {
               <input type="tel" name="phone" value={formData.phone} onChange={handleChange} required placeholder="" />
             </div>
             <div className="form-group">
-              <label>البريد الإلكتروني (example@email.com)</label>
+              <label>البريد الإلكتروني (apkzoz85@gmail.com)</label>
               <input type="email" name="email" value={formData.email} onChange={handleChange} placeholder="" />
             </div>
             <div className="form-group">
@@ -938,7 +938,7 @@ export default function Home() {
       </footer>
 
       {/* WhatsApp */}
-      <a href="https://wa.me/201234567890?text=مرحباً، أريد الاستفسار عن IL Monte Galala" className="whatsapp-btn" target="_blank">
+      <a href="https://wa.me/201070752370?text=مرحباً، أريد الاستفسار عن IL Monte Galala" className="whatsapp-btn" target="_blank">
         💬
       </a>
     </>
