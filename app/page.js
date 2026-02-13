@@ -745,7 +745,7 @@ export default function Home() {
       <section id="overview">
         <h2 className="section-title">نبذة عن المشروع</h2>
         <div className="overview-grid">
-         <img src="/WhatsApp-Image-2026-02-08-at-23_59_18.jpeg" alt="IL Monte Galala Marina View" className="overview-image" /> />
+         <img src="/WhatsApp-Image-2026-02-08-at-23_59_18.jpeg" alt="IL Monte Galala Marina View" className="overview-image" />
           
           <div>
             <h2 style={{ fontSize: '2.5rem', marginBottom: '1.5rem' }}>IL Monte Galala - مشروع استثنائي</h2>
@@ -907,8 +907,7 @@ export default function Home() {
           ))}
         </div>
       </section>
-
-      {/* Payment */}
+{/* Payment Section */}
       <section id="payment">
         <div className="payment-section">
           <h2 className="section-title" style={{ color: 'white' }}>أنظمة سداد مرنة</h2>
@@ -929,10 +928,10 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section> {/* قفلة السيكشن اللي كانت ناقصة */}
+      </section> {/* القفلة دي هي اللي كانت ناقصة ومسببة المشكلة */}
 
       {/* Footer */}
-      <footer>
+      <footer className="footer">
         <div className="footer-content">
           <div className="footer-section">
             <h3>IL Monte Galala</h3>
@@ -960,10 +959,17 @@ export default function Home() {
         </div>
       </footer>
 
-      {/* WhatsApp */}
-      <a href="https://wa.me/201070752370?text=مرحباً، أريد الاستفسار عن IL Monte Galala" className="whatsapp-btn" target="_blank">
+      {/* WhatsApp Button */}
+      <a 
+        href="https://wa.me/201070752370?text=مرحباً، أريد الاستفسار عن IL Monte Galala" 
+        className="whatsapp-btn" 
+        target="_blank" 
+        rel="noopener noreferrer"
+      >
         💬
       </a>
     </>
-  )
+  );
 }
+
+      
