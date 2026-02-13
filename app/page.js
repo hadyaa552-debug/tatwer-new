@@ -906,25 +906,7 @@ export default function Home() {
       </section>
 
       {/* Contact */}
-      <section id="contact" style={{ padding: '5rem 4rem', textAlign: 'center', background: 'linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1920) center/cover', color: 'white' }}>
-        <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-          <h2 className="section-title" style={{ color: 'white' }}>تواصل معنا</h2>
-          <p style={{ fontSize: '1.2rem', lineHeight: 1.8, marginBottom: '2rem' }}>
-            للحجز والاستفسار عن IL Monte Galala، يمكنك التواصل معنا عبر الواتساب أو الاتصال على الرقم التالي
-          </p>
-          <div style={{ display: 'flex', gap: '2rem', justifyContent: 'center', flexWrap: 'wrap', marginTop: '3rem' }}>
-            <div style={{ background: 'rgba(255,255,255,0.1)', padding: '2rem', borderRadius: '15px', backdropFilter: 'blur(10px)' }}>
-              <h3 style={{ fontSize: '1.3rem', marginBottom: '1rem' }}>📞 اتصل بنا</h3>
-              <p style={{ fontSize: '1.5rem', fontWeight: '700', color: 'var(--primary)' }}>0102 4383 203</p>
-            </div>
-            <div style={{ background: 'rgba(255,255,255,0.1)', padding: '2rem', borderRadius: '15px', backdropFilter: 'blur(10px)' }}>
-              <h3 style={{ fontSize: '1.3rem', marginBottom: '1rem' }}>📧 راسلنا</h3>
-              <p style={{ fontSize: '1.2rem', fontWeight: '600' }}>info@ilmontegalala.com</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
+     
       {/* Footer */}
       <footer>
         <div className="footer-content">
