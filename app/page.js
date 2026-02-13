@@ -722,7 +722,7 @@ export default function Home() {
               <input type="tel" name="phone" value={formData.phone} onChange={handleChange} required placeholder="" />
             </div>
             <div className="form-group">
-              <label>البريد الإلكتروني (apkzoz85@gmail.com)</label>
+              <label>البريد الإلكتروني (example@email.com)</label>
               <input type="email" name="email" value={formData.email} onChange={handleChange} placeholder="" />
             </div>
             <div className="form-group">
