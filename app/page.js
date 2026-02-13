@@ -929,6 +929,8 @@ export default function Home() {
             </div>
           </div>
         </div>
+      </section> {/* قفلة السيكشن اللي كانت ناقصة */}
+
       {/* Footer */}
       <footer>
         <div className="footer-content">
