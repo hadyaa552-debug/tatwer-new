@@ -10,10 +10,36 @@ export default function Home() {
     message: ''
   })
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    alert(`شكراً ${formData.name}!\n\nسيتم التواصل معك قريباً على:\n${formData.phone}`)
-    setFormData({ name: '', phone: '', email: '', message: '' })
+    
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          phone: formData.phone,
+          email: formData.email,
+          message: formData.message || 'استفسار عن IL Monte Galala'
+        })
+      })
+      
+      const data = await response.json()
+      
+      if (response.ok) {
+        alert(`شكراً ${formData.name}! ✓\n\nتم إرسال طلبك بنجاح\nسنتواصل معك قريباً على:\n${formData.phone}`)
+        setFormData({ name: '', phone: '', email: '', message: '' })
+      } else {
+        alert('حدث خطأ في الإرسال. حاول مرة أخرى')
+        console.error('Error:', data)
+      }
+    } catch (error) {
+      alert('حدث خطأ. تأكد من اتصالك بالإنترنت')
+      console.error('Error:', error)
+    }
   }
 
   const handleChange = (e) => {
@@ -906,7 +932,25 @@ export default function Home() {
       </section>
 
       {/* Contact */}
-     
+      <section id="contact" style={{ padding: '5rem 4rem', textAlign: 'center', background: 'linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1920) center/cover', color: 'white' }}>
+        <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+          <h2 className="section-title" style={{ color: 'white' }}>تواصل معنا</h2>
+          <p style={{ fontSize: '1.2rem', lineHeight: 1.8, marginBottom: '2rem' }}>
+            للحجز والاستفسار عن IL Monte Galala، يمكنك التواصل معنا عبر الواتساب أو الاتصال على الرقم التالي
+          </p>
+          <div style={{ display: 'flex', gap: '2rem', justifyContent: 'center', flexWrap: 'wrap', marginTop: '3rem' }}>
+            <div style={{ background: 'rgba(255,255,255,0.1)', padding: '2rem', borderRadius: '15px', backdropFilter: 'blur(10px)' }}>
+              <h3 style={{ fontSize: '1.3rem', marginBottom: '1rem' }}>📞 اتصل بنا</h3>
+              <p style={{ fontSize: '1.5rem', fontWeight: '700', color: 'var(--primary)' }}>01070752370</p>
+            </div>
+            <div style={{ background: 'rgba(255,255,255,0.1)', padding: '2rem', borderRadius: '15px', backdropFilter: 'blur(10px)' }}>
+              <h3 style={{ fontSize: '1.3rem', marginBottom: '1rem' }}>📧 راسلنا</h3>
+              <p style={{ fontSize: '1.2rem', fontWeight: '600' }}>info@ilmontegalala.com</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer>
         <div className="footer-content">
@@ -922,7 +966,7 @@ export default function Home() {
           </div>
           <div className="footer-section">
             <h3>تواصل معنا</h3>
-            <p>📞 +20 XXX XXX XXXX</p>
+            <p>📞 01070752370</p>
             <p>📧 info@ilmontegalala.com</p>
             <p>📍 جبل الجلالة - العين السخنة</p>
           </div>
