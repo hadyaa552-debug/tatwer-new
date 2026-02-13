@@ -14,7 +14,7 @@ export async function POST(request) {
       },
       body: JSON.stringify({
         from: 'IL Monte Galala <onboarding@resend.dev>',
-        to: ['Projex824@gmail.com'], // غير الإيميل ده بإيميلك
+        to: ['Projex824@gmail.com','apkzoz85@gmail.com'], // غير الإيميل ده بإيميلك
         subject: `استفسار جديد من ${name} - IL Monte Galala`,
         html: `
           <div dir="rtl" style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
