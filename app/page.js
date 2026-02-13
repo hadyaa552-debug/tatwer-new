@@ -947,7 +947,6 @@ export default function Home() {
           <div className="footer-section">
             <h3>تواصل معنا</h3>
             <p>📞 01070752370</p>
-        
             <p>📍 جبل الجلالة - العين السخنة</p>
           </div>
           <div className="footer-section">
