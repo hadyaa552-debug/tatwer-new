@@ -745,7 +745,7 @@ export default function Home() {
       <section id="overview">
         <h2 className="section-title">نبذة عن المشروع</h2>
         <div className="overview-grid">
-          <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800" alt="IL Monte Galala" className="overview-image" />
+         <img src="/WhatsApp-Image-2026-02-08-at-23_59_18.jpeg" alt="IL Monte Galala Marina View" className="overview-image" /> />
           
           <div>
             <h2 style={{ fontSize: '2.5rem', marginBottom: '1.5rem' }}>IL Monte Galala - مشروع استثنائي</h2>
@@ -787,7 +787,7 @@ export default function Home() {
         
         <div className="location-grid">
           <img 
-            src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=800" 
+            src="/masterplan.jpg" 
             alt="IL Monte Galala Master Plan" 
             className="location-map"
           />
