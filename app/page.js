@@ -93,16 +93,17 @@ export default function Home() {
           min-height: 100vh;
           background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
                       url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1920') center/cover;
-          display: flex;
+          display: grid;
+          grid-template-columns: 1.2fr 0.8fr;
           align-items: center;
-          justify-content: center;
+          gap: 4rem;
           padding: 7rem 4rem 3rem;
           color: white;
         }
         
         .hero-content {
-          text-align: center;
-          max-width: 900px;
+          text-align: right;
+          max-width: 100%;
         }
         
         .hero h1 {
@@ -127,8 +128,6 @@ export default function Home() {
           gap: 3rem;
           margin-top: 3rem;
           max-width: 700px;
-          margin-left: auto;
-          margin-right: auto;
         }
         
         .stat {
@@ -684,6 +683,36 @@ export default function Home() {
             </div>
           </div>
         </div>
+        
+        <div className="contact-form">
+          <h3>احجز استشارة</h3>
+          <form onSubmit={handleSubmit}>
+            <div className="form-group">
+              <label>الاسم الكامل *</label>
+              <input type="text" name="name" value={formData.name} onChange={handleChange} required placeholder="" />
+            </div>
+            <div className="form-group">
+              <label>رقم الهاتف * (20+ 456 123 7890)</label>
+              <input type="tel" name="phone" value={formData.phone} onChange={handleChange} required placeholder="" />
+            </div>
+            <div className="form-group">
+              <label>البريد الإلكتروني (example@email.com)</label>
+              <input type="email" name="email" value={formData.email} onChange={handleChange} placeholder="" />
+            </div>
+            <div className="form-group">
+              <label>نوع الوحدة *</label>
+              <select name="unitType" style={{ width: '100%', padding: '0.7rem', border: '1px solid #ddd', borderRadius: '5px', fontFamily: 'Cairo, sans-serif', fontSize: '0.9rem', background: '#f9f9f9' }}>
+                <option value="">اختر نوع الوحدة</option>
+                <option value="studio">ستوديو</option>
+                <option value="1br">غرفة نوم واحدة</option>
+                <option value="2br">غرفتين نوم</option>
+                <option value="3br">3 غرف نوم</option>
+                <option value="penthouse">بنتهاوس</option>
+              </select>
+            </div>
+            <button type="submit" className="submit-btn">إرسال الطلب</button>
+          </form>
+        </div>
       </section>
 
       {/* Overview */}
@@ -877,30 +906,21 @@ export default function Home() {
       </section>
 
       {/* Contact */}
-      <section id="contact">
-        <h2 className="section-title">تواصل معنا</h2>
-        <div style={{ maxWidth: '600px', margin: '0 auto' }}>
-          <div className="contact-form">
-            <h3>املأ النموذج وسنتواصل معك فوراً</h3>
-            <form onSubmit={handleSubmit}>
-              <div className="form-group">
-                <label>الاسم *</label>
-                <input type="text" name="name" value={formData.name} onChange={handleChange} required placeholder="أدخل اسمك" />
-              </div>
-              <div className="form-group">
-                <label>رقم الهاتف *</label>
-                <input type="tel" name="phone" value={formData.phone} onChange={handleChange} required placeholder="01XXXXXXXXX" />
-              </div>
-              <div className="form-group">
-                <label>البريد الإلكتروني</label>
-                <input type="email" name="email" value={formData.email} onChange={handleChange} placeholder="example@email.com" />
-              </div>
-              <div className="form-group">
-                <label>رسالتك</label>
-                <textarea name="message" value={formData.message} onChange={handleChange} rows="4" placeholder="اكتب استفسارك هنا..."></textarea>
-              </div>
-              <button type="submit" className="submit-btn">إرسال الاستفسار</button>
-            </form>
+      <section id="contact" style={{ padding: '5rem 4rem', textAlign: 'center', background: 'linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1920) center/cover', color: 'white' }}>
+        <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+          <h2 className="section-title" style={{ color: 'white' }}>تواصل معنا</h2>
+          <p style={{ fontSize: '1.2rem', lineHeight: 1.8, marginBottom: '2rem' }}>
+            للحجز والاستفسار عن IL Monte Galala، يمكنك التواصل معنا عبر الواتساب أو الاتصال على الرقم التالي
+          </p>
+          <div style={{ display: 'flex', gap: '2rem', justifyContent: 'center', flexWrap: 'wrap', marginTop: '3rem' }}>
+            <div style={{ background: 'rgba(255,255,255,0.1)', padding: '2rem', borderRadius: '15px', backdropFilter: 'blur(10px)' }}>
+              <h3 style={{ fontSize: '1.3rem', marginBottom: '1rem' }}>📞 اتصل بنا</h3>
+              <p style={{ fontSize: '1.5rem', fontWeight: '700', color: 'var(--primary)' }}>0102 4383 203</p>
+            </div>
+            <div style={{ background: 'rgba(255,255,255,0.1)', padding: '2rem', borderRadius: '15px', backdropFilter: 'blur(10px)' }}>
+              <h3 style={{ fontSize: '1.3rem', marginBottom: '1rem' }}>📧 راسلنا</h3>
+              <p style={{ fontSize: '1.2rem', fontWeight: '600' }}>info@ilmontegalala.com</p>
+            </div>
           </div>
         </div>
       </section>
