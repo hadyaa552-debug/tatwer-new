@@ -269,6 +269,89 @@ export default function Home() {
           color: var(--primary);
         }
         
+        /* Location Section */
+        .location-section {
+          background: #f8f8f8;
+          padding: 5rem 4rem;
+        }
+        
+        .location-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 4rem;
+          align-items: center;
+          max-width: 1400px;
+          margin: 0 auto;
+        }
+        
+        .location-map {
+          width: 100%;
+          border-radius: 15px;
+          box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+        }
+        
+        .location-content {
+          text-align: right;
+        }
+        
+        .location-title {
+          font-size: 2.5rem;
+          font-weight: 800;
+          margin-bottom: 1.5rem;
+          text-align: center;
+        }
+        
+        .location-subtitle {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          font-size: 1.5rem;
+          font-weight: 700;
+          margin-bottom: 1rem;
+          color: var(--dark);
+        }
+        
+        .location-icon {
+          color: var(--primary);
+          font-size: 1.8rem;
+        }
+        
+        .location-description {
+          font-size: 1.05rem;
+          line-height: 1.8;
+          color: #666;
+          margin-bottom: 2rem;
+        }
+        
+        .location-features-title {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          font-size: 1.3rem;
+          font-weight: 700;
+          margin-bottom: 1.5rem;
+          color: var(--dark);
+        }
+        
+        .location-features {
+          list-style: none;
+        }
+        
+        .location-features li {
+          display: flex;
+          align-items: center;
+          gap: 0.8rem;
+          padding: 0.8rem 0;
+          font-size: 1.05rem;
+          color: #555;
+        }
+        
+        .location-features li::before {
+          content: '●';
+          color: var(--primary);
+          font-size: 1.2rem;
+        }
+        
         /* Units */
         .units-grid {
           display: grid;
@@ -446,7 +529,8 @@ export default function Home() {
           }
           
           .overview-grid,
-          .payment-grid {
+          .payment-grid,
+          .location-grid {
             grid-template-columns: 1fr;
           }
           
@@ -568,6 +652,45 @@ export default function Home() {
                 <p>2028</p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Location Section */}
+      <section className="location-section">
+        <h2 className="location-title">الموقع</h2>
+        <p style={{ textAlign: 'center', fontSize: '1.1rem', color: '#666', marginBottom: '3rem', maxWidth: '800px', margin: '0 auto 3rem' }}>
+          موقع استثنائي على جبل الجلالة في العين السخنة - على البحر الأحمر مباشرة
+        </p>
+        
+        <div className="location-grid">
+          <img 
+            src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=800" 
+            alt="IL Monte Galala Master Plan" 
+            className="location-map"
+          />
+          
+          <div className="location-content">
+            <div className="location-subtitle">
+              <span className="location-icon">📍</span>
+              موقع استثنائي على البحر
+            </div>
+            
+            <p className="location-description">
+              يقع IL Monte Galala على جبل الجلالة في العين السخنة، على البحر الأحمر مباشرة. موقع فريد يجمع بين جمال الجبل وروعة البحر مع إطلالات بانورامية خلابة
+            </p>
+            
+            <div className="location-features-title">
+              <span className="location-icon">🚗</span>
+              قريب من
+            </div>
+            
+            <ul className="location-features">
+              <li>جبل الجلالة - العين السخنة</li>
+              <li>على البحر الأحمر مباشرة</li>
+              <li>ساعة و 20 دقيقة من القاهرة</li>
+              <li>موقع استراتيجي على الساحل</li>
+            </ul>
           </div>
         </div>
       </section>
