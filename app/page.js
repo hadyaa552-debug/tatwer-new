@@ -151,29 +151,30 @@ export default function Home() {
         /* Form */
         .contact-form {
           background: white;
-          padding: 2rem;
-          border-radius: 10px;
+          padding: 1.5rem;
+          border-radius: 8px;
           box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+          max-width: 420px;
         }
         
         .contact-form h3 {
-          font-size: 1.6rem;
-          margin-bottom: 1.5rem;
+          font-size: 1.3rem;
+          margin-bottom: 1.2rem;
           color: var(--dark);
           text-align: center;
           font-weight: 700;
         }
         
         .form-group {
-          margin-bottom: 1.5rem;
+          margin-bottom: 1rem;
         }
         
         .form-group label {
           display: block;
-          margin-bottom: 0.5rem;
+          margin-bottom: 0.4rem;
           font-weight: 500;
           color: #555;
-          font-size: 0.9rem;
+          font-size: 0.85rem;
           text-align: right;
         }
         
@@ -181,11 +182,11 @@ export default function Home() {
         .form-group textarea,
         .form-group select {
           width: 100%;
-          padding: 0.9rem;
+          padding: 0.7rem;
           border: 1px solid #ddd;
           border-radius: 5px;
           font-family: 'Cairo', sans-serif;
-          font-size: 0.95rem;
+          font-size: 0.9rem;
           background: #f9f9f9;
         }
         
@@ -199,15 +200,16 @@ export default function Home() {
         
         .submit-btn {
           width: 100%;
-          padding: 1rem;
+          padding: 0.85rem;
           background: var(--primary);
           color: white;
           border: none;
           border-radius: 5px;
-          font-size: 1.05rem;
+          font-size: 1rem;
           font-weight: 700;
           cursor: pointer;
           transition: opacity 0.3s;
+          margin-top: 0.5rem;
         }
         
         .submit-btn:hover {
@@ -519,7 +521,7 @@ export default function Home() {
             </div>
             <div className="form-group">
               <label>نوع الوحدة *</label>
-              <select name="unitType" style={{ width: '100%', padding: '0.9rem', border: '1px solid #ddd', borderRadius: '5px', fontFamily: 'Cairo, sans-serif', fontSize: '0.95rem', background: '#f9f9f9' }}>
+              <select name="unitType" style={{ width: '100%', padding: '0.7rem', border: '1px solid #ddd', borderRadius: '5px', fontFamily: 'Cairo, sans-serif', fontSize: '0.9rem', background: '#f9f9f9' }}>
                 <option value="">اختر نوع الوحدة</option>
                 <option value="studio">ستوديو</option>
                 <option value="1br">غرفة نوم واحدة</option>
